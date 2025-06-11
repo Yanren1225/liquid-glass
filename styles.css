@@ -9,15 +9,8 @@
 
 .liquid-glass {
     position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 16px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--lg-text, #fff);
-    font-size: 2rem;
 }
 
 .liquid-glass::before {
