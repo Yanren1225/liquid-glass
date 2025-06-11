@@ -1,0 +1,49 @@
+:root {
+    --lg-bg-color: rgba(255, 255, 255, 0.25);
+    --lg-highlight: rgba(255, 255, 255, 0.75);
+    --lg-text: #ffffff;
+    --lg-hover-glow: rgba(255, 255, 255, 0.4);
+    --lg-red: #fb4268;
+    --lg-grey: #5b5b5b;
+}
+
+.liquid-glass {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lg-text, #fff);
+    font-size: 2rem;
+}
+
+.liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    filter: url(filters.svg#lg-dist);
+    isolation: isolate;
+}
+
+.liquid-glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--lg-bg-color, rgba(255, 255, 255, 0.25));
+    border-radius: inherit;
+    box-shadow: inset 1px 1px 0 var(--lg-highlight, rgba(255, 255, 255, 0.75)),
+        inset 0 0 5px var(--lg-highlight, rgba(255, 255, 255, 0.75));
+    pointer-events: none;
+}
+
+.liquid-glass>* {
+    position: relative;
+    z-index: 2;
+}
